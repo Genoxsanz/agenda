@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>AgendaPro · Login</title>
+  <link rel="stylesheet" href="./css/app.css">
+</head>
+<body>
+  <main class="screen">
+    <section class="auth-card">
+      <div class="brand-wrap">
+        <h1 class="brand">AgendaPro</h1>
+        <p class="subtitle">Ingresá con tu usuario o correo</p>
+      </div>
+
+      <div id="loginAlert"></div>
+
+      <form id="loginForm" class="form" autocomplete="off">
+        <label class="field">
+          <span>Usuario o correo</span>
+          <input id="usuario" type="text" autocomplete="username" required>
+        </label>
+
+        <label class="field">
+          <span>Clave</span>
+          <input id="clave" type="password" autocomplete="current-password" required>
+        </label>
+
+        <input id="dispositivo" type="hidden" value="Panel Web AgendaPro">
+
+        <div id="empresaBlock" class="d-none">
+          <label class="field">
+            <span>Empresa</span>
+            <select id="empresaSelect"></select>
+          </label>
+        </div>
+
+        <button id="btnLogin" type="submit" class="btn btn-dark">Iniciar sesión</button>
+      </form>
+    </section>
+  </main>
+
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>
