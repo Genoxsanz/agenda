@@ -1,4 +1,5 @@
 const STORAGE_KEY = 'agendapro_session';
+const API_BASE = 'https://agendapro-production-9913.up.railway.app';
 
 const loginForm = document.getElementById('loginForm');
 const usuarioInput = document.getElementById('usuario');
@@ -61,7 +62,7 @@ async function apiLogin({ usuario, clave, dispositivo, id_empresa = null }) {
     payload.id_empresa = id_empresa;
   }
 
-  const response = await fetch('/auth/login', {
+  const response = await fetch(`${API_BASE}/auth/login`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -143,6 +144,7 @@ async function tryLogin() {
       id_empresa: data.empresa?.id_empresa,
       nombre_empresa: data.empresa?.nombre_empresa,
       rol: data.rol,
+      api_base: API_BASE,
     });
 
     showAlert('Inicio de sesión correcto.', 'success');
